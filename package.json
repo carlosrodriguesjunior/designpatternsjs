@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/carlosrodriguesjunior/designpatternsjs#readme",
   "dependencies": {
+    "joi": "^14.3.1",
     "mongoose": "^5.6.5",
     "serverless-offline": "^5.8.0"
   }

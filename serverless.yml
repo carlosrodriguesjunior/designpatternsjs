@@ -4,27 +4,34 @@ provider:
   runtime: nodejs10.x
 
 functions:
-  createInvoiceV1:
-    handler: src/v1/functions/createInvoice.handler
+  # createInvoiceV1:
+  #   handler: src/v1/functions/createInvoice.handler
+  #   events:
+  #     - http:
+  #         path: v1/invoice
+  #         method: post
+  #         cors: true
+  # createInvoiceV2:
+  #   handler: src/v2/functions/createInvoice.handler
+  #   events:
+  #     - http:
+  #         path: v2/invoice
+  #         method: post
+  #         cors: true
+  # createInvoiceV3:
+  #   handler: src/v3/functions/createInvoice.handler
+  #   events:
+  #     - http:
+  #         path: v3/invoice
+  #         method: post
+  #         cors: true                     
+  createInvoiceV4:
+    handler: src/v4/functions/createInvoice.handler
     events:
       - http:
-          path: v1/invoice
+          path: v4/invoice
           method: post
-          cors: true
-  createInvoiceV2:
-    handler: src/v2/functions/createInvoice.handler
-    events:
-      - http:
-          path: v2/invoice
-          method: post
-          cors: true
-  createInvoiceV3:
-    handler: src/v3/functions/createInvoice.handler
-    events:
-      - http:
-          path: v3/invoice
-          method: post
-          cors: true                     
+          cors: true                
 
 plugins:
   - serverless-offline        
