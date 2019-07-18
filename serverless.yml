@@ -11,6 +11,13 @@ functions:
           path: v1/invoice
           method: post
           cors: true
+  createInvoiceV2:
+    handler: src/v2/functions/createInvoice.handler
+    events:
+      - http:
+          path: v2/invoice
+          method: post
+          cors: true          
 
 plugins:
   - serverless-offline        
