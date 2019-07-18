@@ -1,4 +1,4 @@
-const invoiceRepository = require('../repository/invoiceRepository');
+const invoiceRepository = require('../repositories/invoiceRepository');
 
 class InvoiceService {
 

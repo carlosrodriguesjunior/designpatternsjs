@@ -1,6 +1,7 @@
 'use strict';
 
 const invoiceService = require('../services/invoiceService');
+const responseHttpFactory = require('../factories/responseHttpFactory');
 
 module.exports.handler = async (event) => {
 
@@ -16,27 +17,14 @@ module.exports.handler = async (event) => {
 
     let invoice = await invoiceService.createInvoice(body);
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'Success',
-        invoice,
-      }, null, 2),
-    };
+    return responseHttpFactory.response(200,'success', invoice);
 
   } catch (error) {
 
     console.log(error)
 
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: 'Error',
-        error,
-      }, null, 2),
-    };
+    return responseHttpFactory.response(500,'Error', error);
 
   }
-
 
 };
