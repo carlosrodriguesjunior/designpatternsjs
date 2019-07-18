@@ -25,13 +25,19 @@ functions:
   #         path: v3/invoice
   #         method: post
   #         cors: true                     
-  createInvoiceV4:
-    handler: src/v4/functions/createInvoice.handler
+  # createInvoiceV4:
+  #   handler: src/v4/functions/createInvoice.handler
+  #   events:
+  #     - http:
+  #         path: v4/invoice
+  #         method: post
+  #         cors: true                
+  createInvoiceV5:
+    handler: src/v5/functions/createInvoice.handler
     events:
       - http:
-          path: v4/invoice
+          path: v5/invoice
           method: post
-          cors: true                
-
+          cors: true  
 plugins:
   - serverless-offline        
