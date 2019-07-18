@@ -4,8 +4,8 @@ provider:
   runtime: nodejs10.x
 
 functions:
-  createInvoice:
-    handler: src/functions/v1/createInvoice.handler
+  createInvoiceV1:
+    handler: src/v1/functions/createInvoice.handler
     events:
       - http:
           path: v1/invoice
